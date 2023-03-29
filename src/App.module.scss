@@ -1,0 +1,163 @@
+.main {
+	width: 100vw;
+	// height: 100vh;
+	background-color: #040f32;
+
+	.header {
+		display: flex;
+		width: 100%;
+		height: 12rem;
+		align-items: center;
+		justify-content: center;
+		font-size: 2.2rem;
+		color: rgb(104, 173, 0);
+		font-weight: bold;
+	}
+
+	.container {
+		// background-color: red;
+		// height: 100%;
+		width: 90%;
+		margin: 0 auto;
+	}
+
+	.welcome {
+		width: 100%;
+		// background-color: yellow;
+		color: white;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		padding: 1.2rem;
+		h3 {
+			font-size: 2.5rem;
+		}
+
+		button {
+			width: 10rem;
+			height: 3rem;
+			background-color: white;
+			color: rgb(93, 134, 31);
+			border: none;
+			border-radius: 0.5rem;
+			font-size: 1.5rem;
+			font-weight: bold;
+			cursor: pointer;
+		}
+	}
+
+	.cardsContainer {
+		display: grid;
+		grid-template-columns: repeat(3, 4fr);
+		padding: 2rem;
+		height: auto;
+		gap: 2.2rem;
+		.card {
+			position: relative;
+			width: 65%;
+			background-color: #002141;
+			border-radius: 1.2em;
+			color: white;
+			display: flex;
+			flex-direction: column;
+			justify-self: center;
+
+			.content {
+				background-color: #fff;
+				margin: 1em;
+			}
+			.cardImg {
+				width: 100%;
+				height: 220px;
+				border-radius: 1.2rem 1.2rem 0 0;
+				background-color: green;
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+					border-radius: 1.2rem 1.2rem 0 0;
+				}
+			}
+
+			.cardInfo {
+				padding: 1rem 0.8rem;
+
+				h4 {
+					font-size: 3rem;
+					font-weight: bold;
+				}
+			}
+
+			.description {
+				margin-bottom: 0.6em;
+				display: flex;
+				flex-direction: column;
+				gap: 1em;
+				align-items: center;
+				justify-content: space-between;
+
+				span {
+					width: 100%;
+					display: flex;
+					justify-content: flex-start;
+					font-size: 2rem;
+				}
+			}
+
+			.cardBtns {
+				padding: 1rem;
+				display: flex;
+				justify-content: flex-end;
+				position: absolute;
+				top: 0rem;
+				right: 0rem;
+
+				.icon {
+					position: absolute;
+					font-size: 2.5rem;
+					top: 0;
+					right: 05;
+					color: rgb(255, 33, 33);
+				}
+				button {
+					display: flex;
+					gap: 1rem;
+					align-items: center;
+				}
+
+				.edit {
+					background-color: rgb(237, 237, 117);
+					color: white;
+					border: none;
+					padding: 0.5rem;
+					border-radius: 0.5rem;
+					font-size: 1rem;
+					font-weight: bold;
+					cursor: pointer;
+					width: 5rem;
+					height: 3rem;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					font-size: 1.2rem;
+				}
+				.delete {
+					background-color: rgb(237, 117, 117);
+					color: white;
+					border: none;
+					padding: 0.5rem;
+					width: 5rem;
+					border-radius: 0.5rem;
+					font-size: 1rem;
+					font-weight: bold;
+					cursor: pointer;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					font-size: 1.2rem;
+				}
+			}
+		}
+	}
+}
