@@ -44,9 +44,23 @@ export const removeCharacter = createAsyncThunk(
 				(character: any) => character.id !== id
 			);
 			return newData;
-		} catch (error) {
-			console.error(error);
-		}
+		} catch (error) {}
+	}
+);
+
+export const editCharacter = createAsyncThunk(
+	'character/editCharacterAPI',
+	async (args: any, { getState, rejectWithValue }) => {
+		try {
+			const state = getState() as { character: CharacterState };
+			const newData = state.character.data.map((character: any) => {
+				if (character.id === args.id) {
+					return { ...character, ...args };
+				}
+				return character;
+			});
+			return newData;
+		} catch (error) {}
 	}
 );
 
@@ -79,6 +93,12 @@ const characterSlice = createSlice({
 			state.message = payload.message;
 			state.isSuccessful = false;
 			state.error = payload.error;
+		},
+		[editCharacter.fulfilled.type]: (state, { payload }) => {
+			state.loading = false;
+			state.data = payload;
+			state.isSuccessful = true;
+			state.error = null;
 		},
 	},
 });
