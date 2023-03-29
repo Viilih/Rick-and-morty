@@ -56,8 +56,7 @@ function App() {
 		dispatch(changeTitle(text));
 	};
 
-	const title = useSelector((state: TitleState) => state.titleSlice.title);
-	console.log(title);
+	const title = useSelector((state: any) => state.titleSlice.title);
 	return (
 		<div className={styles.main}>
 			<div className={styles.header}>
