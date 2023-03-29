@@ -1,13 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+export interface TitleState {
+	title: string;
+}
+
 const titleSlice = createSlice({
 	name: 'title',
 	initialState: {
 		title: 'Rick and Morty',
-	},
+	} as TitleState,
 	reducers: {
 		changeTitle: (state, action) => {
-			return { title: action.payload };
+			state.title = action.payload;
 		},
 	},
 	extraReducers: {},

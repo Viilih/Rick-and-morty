@@ -11,6 +11,7 @@ import { useAppDispatch } from './redux/store';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { changeTitle } from './redux/Title/titleSlice';
 import titleSlice from './redux/Title/titleSlice';
+import { TitleState } from './redux/Title/titleSlice';
 
 function App() {
 	interface ICharacters {
@@ -50,23 +51,25 @@ function App() {
 
 	const handleEditClick = (e: FormEvent) => {
 		e.preventDefault();
+		console.log(e);
 		console.log('entri na função de editar');
-		dispatch(changeTitle('teste'));
+		dispatch(changeTitle(text));
 	};
 
-	// const mapStateProps = (state: any) => {
-	// 	return  title
-
-	// };
-
+	const title = useSelector((state: TitleState) => state.titleSlice.title);
+	console.log(title);
 	return (
 		<div className={styles.main}>
 			<div className={styles.header}>
-				<h1>Rick and Morty</h1>
-				{/* <input type="text" value={text} onChange={e => e.target.value} />
+				<h1>{title}</h1>
 				<form onSubmit={e => handleEditClick(e)}>
+					<input
+						type="text"
+						value={text}
+						onChange={e => setText(e.target.value)}
+					/>
 					<button>Editar</button>
-				</form> */}
+				</form>
 			</div>
 			<div className={styles.container}>
 				<div className={styles.welcome}>
